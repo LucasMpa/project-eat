@@ -1,0 +1,138 @@
+module.exports = {
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+    jest: true,
+  },
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 11,
+    sourceType: 'module',
+  },
+  ignorePatterns: [
+    '**/node_modules/**/*.js',
+    '**/node_modules/**/*.ts',
+    '**/node_modules/**/*.jsx',
+    '**/node_modules/**/*.tsx',
+  ],
+  settings: {
+    'import/resolver': {
+      typescript: {},
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+    react: {
+      version: 'detect',
+    },
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'prettier',
+    'prettier/@typescript-eslint',
+    'prettier/react',
+  ],
+  plugins: ['prettier', '@typescript-eslint', 'eslint-plugin-import-helpers'],
+  globals: {
+    __DEV__: true,
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  rules: {
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'off',
+      {
+        ignoreRestSiblings: true,
+        argsIgnorePattern: '^_',
+        caughtErrors: 'none',
+      },
+    ],
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/no-unused-vars-experimental': 'off',
+    'react/jsx-filename-extension': [
+      1,
+      { extensions: ['.js', '.jsx', '.tsx'] },
+    ],
+    'prettier/prettier': 'error',
+    'no-shadow': 'off',
+    'no-console': 'off',
+    'no-empty-pattern': 'off',
+    'no-useless-constructor': 'off',
+    'class-methods-use-this': 'off',
+    'no-cond-assign': 'off',
+    'no-plusplus': 'off',
+    eqeqeq: 'off',
+    'prefer-promise-reject-errors': 'warn',
+    camelcase: 'off',
+    'no-unused-expressions': 'off',
+    'no-use-before-define': 'off',
+    'no-param-reassign': 'warn',
+    semi: 0,
+    'global-require': 'off',
+    'consistent-return': 'warn',
+    'jsx-a11y/alt-text': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    'no-restricted-globals': 'warn',
+    'no-restricted-imports': [
+      'error',
+      {
+        patterns: ['@material-ui/*/*/*', '!@material-ui/core/test-utils/*'],
+      },
+    ],
+    'react/display-name': 'off',
+    'react/require-default-props': 'off',
+    'react/destructuring-assignment': 'warn',
+    'react/no-array-index-key': 'warn',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'react/prop-types': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-empty-interface': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-empty-function': 'warn',
+    '@typescript-eslint/prefer-literal-enum-member': 'error',
+    '@typescript-eslint/ban-types': [
+      'error',
+      {
+        extendDefaults: true,
+        types: {
+          '{}': false,
+        },
+      },
+    ],
+
+    'import-helpers/order-imports': [
+      'off',
+      {
+        newlinesBetween: 'always',
+        groups: [
+          '/^(react|react-native|styled-components|styled-components/native)$/',
+          'module',
+          '/^@//',
+          ['parent', 'sibling', 'index'],
+        ],
+        alphabetize: {
+          order: 'asc',
+          ignoreCase: true,
+        },
+      },
+    ],
+    'import/extensions': 'off',
+    'import/no-unresolved': 'off',
+    'import/prefer-default-export': 'off',
+    'import/no-extraneous-dependencies': 'off',
+  },
+};
