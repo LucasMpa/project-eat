@@ -1,10 +1,6 @@
-import { makeStyles } from '@material-ui/styles';
-const useStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
-    padding: 16,
-  },
+import styled from 'styled-components'
 
-}));
-
-export default useStyles;
+export const Root = styled.div`
+    width: 100%;
+    padding: 16px;
+`
