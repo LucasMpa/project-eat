@@ -1,1 +1,0 @@
-export const API_URL = 'https://project-eat-f23b6-default-rtdb.firebaseio.com';

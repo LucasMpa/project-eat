@@ -3,18 +3,18 @@ import Header from '../../components/Header';
 import Categories from './components/Categories';
 import Greetings from './components/Greetings';
 import Populars from './components/Populars';
-import { Root } from './styles'
+import useStyles from './styles';
 
 const HomePage: React.FC = () => {
+  const classes = useStyles();
   return (
-    <>
+    <div className={classes.root}>
       <Header />
-      <Root>
-        <Greetings />
-        <Populars />
-        <Categories />
-      </Root>
-    </>
+      <Greetings />
+      <Populars />
+      <Categories />
+    </div>
+
   )
 }
 

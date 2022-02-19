@@ -7,13 +7,14 @@ import { Container, ProductImage, Title, Description } from './styles';
 
 const ProductDetails: React.FC = () => {
   const router = useRouter();
-  const { title, subtitle, price, image } = router.query;
+  console.log(router.query);
+  const { title, subtitle, price } = router.query;
 
   return (
     <Container>
       <GoBack />
       <ProductImage
-        src={typeof image === 'string' ? image : ''}
+        src='https://image.freepik.com/vetores-gratis/fatia-voadora-de-ilustracao-em-vetor-pizza-dos-desenhos-animados-vetor-isolado-conceito-de-fast-food-estilo-flat-cartoon_138676-1934.jpg'
         alt='product-image' />
       <Title>
         {title}
@@ -21,12 +22,7 @@ const ProductDetails: React.FC = () => {
       <Description>
         {subtitle}
       </Description>
-      <Footer
-        price={price}
-        subtitle={subtitle}
-        title={title}
-        image={image}
-      />
+      <Footer price={price} />
     </Container>
 
   );
