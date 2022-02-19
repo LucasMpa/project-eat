@@ -27,7 +27,7 @@ const Greetings: React.FC = () => {
 
   return (
     <Root>
-      <Title>Olá, Fulano</Title>
+      <Title>Olá, Lucas</Title>
       <Subtitle>{getActualGreetings()}</Subtitle>
     </Root>
 
